@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* Base Input Styles for Forms */
+.input-underline {
+  border-bottom: 1px solid #c7c1b5 !important;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.input-underline:focus {
+  outline: none;
+  border-bottom: 1px solid #3B342F !important;
+  box-shadow: 0 1px 0 0 #3B342F !important;
+}
+
+.submit-btn {
+  transform: translateX(10px);
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.input-underline:focus ~ .submit-btn,
+.input-underline:not(:placeholder-shown) ~ .submit-btn {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.form-submitted .input-group {
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* 21st.dev Infinite Scroll Animation */
+@keyframes scroll-right {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.infinite-scroll {
+  /* Pause animation on hover for better UX */
+  animation: scroll-right 40s linear infinite;
+}
+
+.infinite-scroll:hover {
+  animation-play-state: paused;
+}
+
+.scroll-container {
+  mask: linear-gradient(90deg, transparent 0%, black 5%, black 95%, transparent 100%);
+  -webkit-mask: linear-gradient(90deg, transparent 0%, black 5%, black 95%, transparent 100%);
+}
+
+.image-item {
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.image-item:hover {
+  transform: scale(1.02);
+  filter: brightness(1.05);
+}

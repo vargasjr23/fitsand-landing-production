@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fitsand - The Essentials</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee5f2b",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221510",
+                        "brand-surface": "#EFEBE3",
+                        "brand-text": "#3B342F",
+                        "brand-muted": "#9F8D7F",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for horizontal scroll snap */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        /* Smooth scale animation for product image */
+        .group-hover\/card\:scale-103 {
+            transform: scale(1.03);
+            transition: transform 800ms ease-out;
+        }
+        
+        /* Smooth image transition */
+        .product-image {
+            transition: transform 800ms ease-out;
+        }
+    </style>
+</head>
+<body class="bg-background-light text-brand-text font-display antialiased min-h-screen flex flex-col">
+<!-- Shared TopNavBar (Included as it's a browsing destination) -->
+<nav class="bg-stone-50/90 dark:bg-stone-950/90 backdrop-blur-md border-b border-stone-200/50 dark:border-stone-800/50 fixed top-0 w-full z-50">
+<div class="flex justify-between items-center px-6 py-4 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-light tracking-[0.2em] uppercase text-stone-900 dark:text-stone-50 font-body">Fitsand</div>
+<div class="hidden md:flex gap-8 items-center font-nav text-sm tracking-wide uppercase">
+<a class="text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors duration-300" href="#">Shop</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors duration-300" href="#">Philosophy</a>
+<a class="text-stone-900 dark:text-stone-100 border-b border-stone-900 dark:border-stone-100 pb-0.5" href="#">Community</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors duration-300" href="#">Journal</a>
+</div>
+<div class="flex items-center gap-5">
+<button class="text-stone-800 dark:text-stone-200 flex items-center" onclick="document.getElementById('cart-drawer').classList.toggle('translate-x-full')">
+<span class="material-symbols-outlined text-[22px]" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<button class="text-stone-800 dark:text-stone-200 flex items-center">
+<span class="material-symbols-outlined text-[22px]" data-icon="person">person</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content: Best Sellers -->
+<main class="flex-grow w-full max-w-[1280px] mx-auto px-4 md:px-10 lg:px-20 py-16 md:py-24">
+<!-- Section Header -->
+<div class="mb-12">
+<h1 class="text-4xl md:text-5xl lg:text-[64px] font-bold text-brand-text tracking-tight mb-4">The Essentials</h1>
+<p class="text-brand-muted text-base md:text-lg max-w-2xl">Discover our most-loved, foundation pieces designed to move with you through every part of your day.</p><div class="flex justify-start mt-8 mb-4">
+<div class="inline-flex p-1 bg-brand-surface rounded-full border border-gray-100">
+<button aria-label="Switch to Women collection" class="px-8 py-2 text-sm font-semibold rounded-full transition-all duration-300 bg-white text-brand-text shadow-sm">
+            Women
+        </button>
+<button aria-label="Switch to Men collection" class="px-8 py-2 text-sm font-semibold rounded-full transition-all duration-300 text-brand-muted hover:text-brand-text">
+            Men
+        </button>
+</div>
+</div>
+</div>
+<!-- Product Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-y-16 snap-x snap-mandatory overflow-x-auto hide-scrollbar pb-8 md:pb-0 md:overflow-visible">
+<!-- Product Card 1 -->
+<div class="group/card flex flex-col w-[85vw] sm:w-[300px] md:w-auto shrink-0 snap-center">
+<!-- Image Container -->
+<div class="relative bg-brand-surface rounded-lg aspect-[2/3] overflow-hidden mb-4 isolate">
+<img alt="Seamless Flow Leggings" class="w-full h-full object-cover product-image group-hover/card:scale-103" data-alt="woman in soft clay activewear leggings doing yoga in bright minimalist studio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrazpj6Ne2PBm5ZwYiBgEZiXV6qnCCf3vcEyBfB9-Sf2-tQUeBkO67Nf1Rm0SkJn6BWKcUYouQyLGHfT9g2hWUsAozPaySPaeWlSnQ-qLvIhcAohUTXpPCDD8eQClLw7Qwv5-4DElNTfWc72z-rj6dogAwCNNZ9yUbJhyQWhodM39EKNYWkuuT0CEo_aUG0NdntK923NDVK-wBXEZWbEM8GP_VXp_8Gb_iGxsMHlAVbmPVNoDsseqChQX5JBt0jl2-8aWo3J8AAko"/>
+<!-- Quick Add Overlay -->
+<div class="absolute inset-0 bg-black/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 z-10 pointer-events-none"></div>
+<div class="absolute bottom-6 left-0 right-0 flex justify-center z-20 px-4">
+<button class="w-full max-w-[200px] bg-background-light text-brand-text font-semibold text-sm tracking-wide uppercase py-3 rounded-lg shadow-sm opacity-0 translate-y-4 group-hover/card:opacity-100 group-hover/card:translate-y-0 transition-all duration-300 ease-out hover:bg-primary hover:text-white" onclick="document.getElementById('cart-drawer').classList.remove('translate-x-full')">
+                            Quick Add
+                        </button>
+</div>
+</div>
+<!-- Product Info -->
+<div class="flex flex-col gap-1">
+<h3 class="text-brand-text text-lg font-semibold leading-tight">Seamless Flow Leggings</h3>
+<p class="text-brand-text font-medium">$88</p>
+<!-- Color Swatches -->
+<div class="flex gap-2 mt-2">
+<button aria-label="Soft Clay" class="w-4 h-4 rounded-full border border-brand-muted bg-[#B47A65] ring-1 ring-offset-2 ring-primary focus:outline-none"></button>
+<button aria-label="Espresso" class="w-4 h-4 rounded-full border border-brand-muted bg-[#3B342F] hover:ring-1 hover:ring-offset-2 hover:ring-brand-muted focus:outline-none"></button>
+<button aria-label="Sage" class="w-4 h-4 rounded-full border border-brand-muted bg-[#7E8A73] hover:ring-1 hover:ring-offset-2 hover:ring-brand-muted focus:outline-none"></button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group/card flex flex-col w-[85vw] sm:w-[300px] md:w-auto shrink-0 snap-center">
+<div class="relative bg-brand-surface rounded-lg aspect-[2/3] overflow-hidden mb-4 isolate">
+<img alt="Elevated Crop Top" class="w-full h-full object-cover product-image group-hover/card:scale-103" data-alt="close up of woman wearing ribbed taupe crop top activewear soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-rH3bGa2IYEHl0OXY1RtVLTUBw0_Tes3GUC0JnxxyOuNn_4El1kBhP24oUxOaskKagp-5iICmnAx6o8v7dPrrL0zaNZqucBI6ldHM-MbxgDDejn93W6VjQQWu-CrD_9xbfGLKMeoubtBs29LBwoJw4vWsmuJ_N-fwOUUeECV_b2TNmRNSgN502rTPZpLbNktLQEH-XH4m3lJYvGwVKavMv4fTb67YaltFqfwBu1h3ffUjWsulgoJ45NqVmmExIZ9WIREn5F1k280"/>
+<div class="absolute bottom-6 left-0 right-0 flex justify-center z-20 px-4">
+<button class="w-full max-w-[200px] bg-background-light text-brand-text font-semibold text-sm tracking-wide uppercase py-3 rounded-lg shadow-sm opacity-0 translate-y-4 group-hover/card:opacity-100 group-hover/card:translate-y-0 transition-all duration-300 ease-out hover:bg-primary hover:text-white" onclick="document.getElementById('cart-drawer').classList.remove('translate-x-full')">
+                            Quick Add
+                        </button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-brand-text text-lg font-semibold leading-tight">Elevated Crop Top</h3>
+<p class="text-brand-text font-medium">$54</p>
+<div class="flex gap-2 mt-2">
+<button aria-label="Sand" class="w-4 h-4 rounded-full border border-brand-muted bg-[#EFEBE3] ring-1 ring-offset-2 ring-primary focus:outline-none"></button>
+<button aria-label="Espresso" class="w-4 h-4 rounded-full border border-brand-muted bg-[#3B342F] hover:ring-1 hover:ring-offset-2 hover:ring-brand-muted focus:outline-none"></button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group/card flex flex-col w-[85vw] sm:w-[300px] md:w-auto shrink-0 snap-center">
+<div class="relative bg-brand-surface rounded-lg aspect-[2/3] overflow-hidden mb-4 isolate">
+<img alt="Ribbed Bralette" class="w-full h-full object-cover product-image group-hover/card:scale-103" data-alt="woman dancing in airy studio wearing sage green ribbed bralette flowing movement" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxlMRJkXyZzkhaiKD2YoEpKJ6YGz5uLpdMzzPbQozLKO9KDw-5gY3blZV1_ZgKbppWe0GCEEwP-UHP76EWA7fZyVV-OEovdgH8gcF7lUm_0qijHtpftqw3P1WwTDYzIJ8oOqGk9JIffGSsQ5RZGWVrvG8amC-CV9D_p8bX4rQqBxGIWIFJaBR0no73fR1pplbbBXVTS01fSbodkPwCitQVXFsQDbxnD-GTfPeVDESVspv1JKCc06qdDIEqgjt4pt84Sw_TdDMwe-g"/>
+<div class="absolute bottom-6 left-0 right-0 flex justify-center z-20 px-4">
+<button class="w-full max-w-[200px] bg-background-light text-brand-text font-semibold text-sm tracking-wide uppercase py-3 rounded-lg shadow-sm opacity-0 translate-y-4 group-hover/card:opacity-100 group-hover/card:translate-y-0 transition-all duration-300 ease-out hover:bg-primary hover:text-white" onclick="document.getElementById('cart-drawer').classList.remove('translate-x-full')">
+                            Quick Add
+                        </button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-brand-text text-lg font-semibold leading-tight">Ribbed Bralette</h3>
+<p class="text-brand-text font-medium">$48</p>
+<div class="flex gap-2 mt-2">
+<button aria-label="Sage" class="w-4 h-4 rounded-full border border-brand-muted bg-[#7E8A73] ring-1 ring-offset-2 ring-primary focus:outline-none"></button>
+<button aria-label="Soft Clay" class="w-4 h-4 rounded-full border border-brand-muted bg-[#B47A65] hover:ring-1 hover:ring-offset-2 hover:ring-brand-muted focus:outline-none"></button>
+<button aria-label="Sand" class="w-4 h-4 rounded-full border border-brand-muted bg-[#EFEBE3] hover:ring-1 hover:ring-offset-2 hover:ring-brand-muted focus:outline-none"></button>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group/card flex flex-col w-[85vw] sm:w-[300px] md:w-auto shrink-0 snap-center pr-4 md:pr-0">
+<div class="relative bg-brand-surface rounded-lg aspect-[2/3] overflow-hidden mb-4 isolate">
+<img alt="Lounge Joggers" class="w-full h-full object-cover product-image group-hover/card:scale-103" data-alt="relaxed woman sitting cross legged in soft beige lounge joggers warm morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJXG-Qus5MwYiH3wU-7XCOVMRkKKFRSkYWmLQI7La--GjW32oWVVQOr5ZeJPiFsmbFn6NIK2liSyyFEpqHOUHsvbug1lRT6GlvFqxXFGsLElotAuCaRomb_VUOeYNkDUFmAqL23Ed7TG6r4QV8IhpXcw7Wk6hrVHlnxiB0cra8GdpQf4gmZPo_pFmXyz4juA6b7vYfjS3dkkNN98snvm_t-h5p9O-qVl88ENLXrDFOGoISP0bO-IedMVWlRZYtuU9TrR90ctzK2pE"/>
+<div class="absolute bottom-6 left-0 right-0 flex justify-center z-20 px-4">
+<button class="w-full max-w-[200px] bg-background-light text-brand-text font-semibold text-sm tracking-wide uppercase py-3 rounded-lg shadow-sm opacity-0 translate-y-4 group-hover/card:opacity-100 group-hover/card:translate-y-0 transition-all duration-300 ease-out hover:bg-primary hover:text-white" onclick="document.getElementById('cart-drawer').classList.remove('translate-x-full')">
+                            Quick Add
+                        </button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-brand-text text-lg font-semibold leading-tight">Lounge Joggers</h3>
+<p class="text-brand-text font-medium">$98</p>
+<div class="flex gap-2 mt-2">
+<button aria-label="Sand" class="w-4 h-4 rounded-full border border-brand-muted bg-[#EFEBE3] ring-1 ring-offset-2 ring-primary focus:outline-none"></button>
+<button aria-label="Taupe" class="w-4 h-4 rounded-full border border-brand-muted bg-[#9F8D7F] hover:ring-1 hover:ring-offset-2 hover:ring-brand-muted focus:outline-none"></button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Slide-Out Cart Drawer -->
+<div class="fixed inset-y-0 right-0 w-full md:w-[400px] bg-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out z-50 flex flex-col" id="cart-drawer">
+<!-- Drawer Header -->
+<div class="flex items-center justify-between p-6 border-b border-gray-100">
+<h2 class="text-xl font-bold text-brand-text">Your Wardrobe</h2>
+<button class="text-brand-muted hover:text-brand-text transition-colors p-2" onclick="document.getElementById('cart-drawer').classList.add('translate-x-full')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Drawer Content (Empty State hidden for this demo, showing filled state) -->
+<div class="flex-1 overflow-y-auto p-6 flex flex-col gap-6">
+<!-- Cart Item -->
+<div class="flex gap-4">
+<div class="w-20 h-24 bg-brand-surface rounded-md overflow-hidden shrink-0">
+<img alt="Seamless Flow Leggings Thumbnail" class="w-full h-full object-cover" data-alt="thumbnail of seamless flow leggings in soft clay color" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhH7OHqoBWGe6UUUwcezDkJKeZhP6dzr0xgApg-oXc04Y5jU2759cKI7uteqaRGMPnhWA2G-ALbeWa-Coe7weCqBp2srwWm7RVgNrzQ1YqTMcPWVk2ELdOBXdnjzQQVXkAh0ZOs9PEn0wLWR7OmsP56xAGBMdfvEW-qhxjv9xOmc_BdSXWlXZCejnX7Ul8pAJU5hrU1h3DmmaA3JF6otVxFZCQO5owmVJmDFpVNft41a11Aj75sCdnkTrDnRBFiAxmTyKSeXzxOAs"/>
+</div>
+<div class="flex flex-col justify-between py-1 w-full">
+<div>
+<div class="flex justify-between items-start">
+<h4 class="font-semibold text-brand-text text-sm">Seamless Flow Leggings</h4>
+<button class="text-brand-muted hover:text-primary"><span class="material-symbols-outlined text-sm">delete</span></button>
+</div>
+<p class="text-sm text-brand-muted mt-1">Soft Clay / S</p>
+</div>
+<div class="flex justify-between items-center mt-2">
+<div class="flex items-center border border-gray-200 rounded-md">
+<button class="px-2 py-1 text-brand-muted hover:text-brand-text">-</button>
+<span class="px-2 py-1 text-sm">1</span>
+<button class="px-2 py-1 text-brand-muted hover:text-brand-text">+</button>
+</div>
+<p class="font-semibold text-brand-text">$88</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Drawer Footer -->
+<div class="p-6 border-t border-gray-100 bg-background-light mt-auto">
+<div class="flex justify-between items-center mb-4">
+<span class="text-brand-muted font-medium">Subtotal</span>
+<span class="text-xl font-bold text-brand-text">$88</span>
+</div>
+<p class="text-xs text-brand-muted mb-6">Shipping and taxes calculated at checkout.</p>
+<button class="w-full bg-primary hover:bg-[#d94f20] text-white font-bold py-4 rounded-lg transition-colors flex justify-center items-center gap-2 uppercase tracking-wide text-sm">
+                Checkout
+            </button>
+</div>
+</div>
+<!-- Backdrop for Drawer -->
+<div class="fixed inset-0 bg-black/20 z-40 hidden [.translate-x-full~&amp;]:hidden [body:has(#cart-drawer:not(.translate-x-full))_&amp;]:block transition-opacity" id="drawer-backdrop" onclick="document.getElementById('cart-drawer').classList.add('translate-x-full')"></div>
+</body></html>

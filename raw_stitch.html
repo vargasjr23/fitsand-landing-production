@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fitsand - Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500&amp;family=Fraunces:opsz,wght@9..144,300;9..144,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="font-body text-text-main bg-background-light antialiased selection:bg-primary selection:text-white">
+<!-- Header (Shared Component Adapted for Hero) -->
+<nav class="bg-stone-50/90 dark:bg-stone-950/90 backdrop-blur-md border-b border-stone-200/50 dark:border-stone-800/50 fixed top-0 w-full z-50">
+<div class="flex justify-between items-center px-6 py-4 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-light tracking-[0.2em] uppercase text-stone-900 dark:text-stone-50 font-body">Fitsand</div>
+<div class="hidden md:flex gap-8 items-center font-nav text-sm tracking-wide uppercase">
+<a class="text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors duration-300" href="#">Shop</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors duration-300" href="#">Philosophy</a>
+<a class="text-stone-900 dark:text-stone-100 border-b border-stone-900 dark:border-stone-100 pb-0.5" href="#">Community</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors duration-300" href="#">Journal</a>
+</div>
+<div class="flex items-center gap-5">
+<button class="text-stone-800 dark:text-stone-200 flex items-center">
+<span class="material-symbols-outlined text-[22px]" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<button class="text-stone-800 dark:text-stone-200 flex items-center">
+<span class="material-symbols-outlined text-[22px]" data-icon="person">person</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<main class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+<!-- Background Image -->
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center object-cover" data-alt="Young woman in taupe activewear sitting relaxed in a sunlit, minimalist aesthetic cafe, warm natural lighting, soft focus background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDWKJi6W867dZQQiFMFSM-g6wynAzrA6e3OFrqAWAt7RUSMMXCUDv-1_qk9CqjRdQGjqQbJR6vwxDjh_EQo2qGYOrgPYVFQNgkuG9ME08uKgoOC8JqlsUCMlbu2xzwxkV0tRoURZPNcSH8uECaxKcCGuITWL7PhBcudjdYHSftiN7M7d37f3tFjgs3ioQltqZMnW4v9Gq7QsDJI1GO68V_BTOYPkOHF-5zHttYSfZFYhIQeZf_bbAQhhZyHg_8C1ZlppT76vd1cuRk');">
+</div>
+<!-- Subtle Overlay for text readability -->
+<div class="absolute inset-0 bg-background-light/20"></div>
+</div>
+<!-- Hero Content -->
+<div class="relative z-10 flex flex-col items-center text-center px-4 max-w-4xl fade-in-up mt-16">
+<h1 class="text-text-main font-heading font-light text-[40px] md:text-[64px] leading-tight tracking-tight mb-8">
+                Movement, refined.
+            </h1>
+<a class="inline-flex items-center justify-center bg-primary text-background-light px-8 py-4 text-[12px] font-medium uppercase tracking-[0.1em] rounded-sm transition-colors duration-300 hover:bg-muted" href="#shop">
+                Shop the Collection
+            </a>
+</div>
+</main>
+</body></html>
