@@ -29,9 +29,9 @@ export const HeroReveal = ({ heroImage, mobileHeroImage, children }) => {
   // Physically unmount the logo from the flex layout after standard fade to prevent absolutely any ghost overlapping
   const logoDisplay = useTransform(scrollYProgress, (pos) => pos > 0.31 ? "none" : "flex");
 
-  // Scroll indicator fades out very fast as soon as user starts scrolling
-  const scrollIndicatorOpacity = useTransform(scrollYProgress, [0, 0.05], [1, 0]);
-  const scrollIndicatorY = useTransform(scrollYProgress, [0, 0.05], [0, 10]);
+  // Scroll indicator fades out fast as soon as user starts scrolling
+  const scrollIndicatorOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
+  const scrollIndicatorY = useTransform(scrollYProgress, [0, 0.1], [0, 15]);
 
   const [textVisible, setTextVisible] = useState(false);
   
@@ -45,7 +45,7 @@ export const HeroReveal = ({ heroImage, mobileHeroImage, children }) => {
 
   return (
     <div ref={containerRef} style={{ height: "200vh" }} className="relative w-full bg-background-light">
-      <div className="sticky top-0 h-screen w-full overflow-hidden bg-brand-surface border-b border-stone-200">
+      <div className="sticky top-0 h-screen w-full overflow-hidden bg-brand-surface border-b border-stone-200 relative">
         
         {/* The zooming background image revealed by the clip mask */}
         <motion.div
@@ -91,17 +91,17 @@ export const HeroReveal = ({ heroImage, mobileHeroImage, children }) => {
 
         {/* Minimal Scroll Down Indicator at the very bottom, visible only at the start */}
         <motion.div 
-          className="absolute bottom-10 left-0 right-0 flex flex-col items-center gap-1 z-40 pointer-events-none"
+          className="absolute bottom-6 left-0 right-0 flex flex-col items-center gap-1 z-40 pointer-events-none"
           style={{ 
             opacity: scrollIndicatorOpacity, 
             y: scrollIndicatorY
           }}
         >
-          <span className="font-nav text-[10px] tracking-[0.3em] uppercase text-stone-400">Scroll</span>
+          <span className="font-nav text-[10px] tracking-[0.4em] uppercase text-stone-500 font-medium">Scroll</span>
           <motion.span 
-            className="material-symbols-outlined text-stone-400 text-[20px]"
-            animate={{ y: [0, 5, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+            className="material-symbols-outlined text-stone-500 text-[24px]"
+            animate={{ y: [0, 6, 0] }}
+            transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
           >
             expand_more
           </motion.span>
