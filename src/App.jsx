@@ -7,6 +7,7 @@ export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [isCartPopupOpen, setIsCartPopupOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Handle Navbar Scroll Effect
   useEffect(() => {
@@ -24,6 +25,7 @@ export default function App() {
 
   // Image URLs (Local assets in the /public folder)
   const heroBackgroundImage = "/hero.jpg";
+  const mobileHeroBackgroundImage = "/hero-mobile.jpg";
   const brandStoryBackgroundImage = "/brandhistory.jpg";
 
   return (
@@ -44,7 +46,7 @@ export default function App() {
             <img src="/logo.png" alt="Fitsand Logo" className="h-6 md:h-8 object-contain transition-all duration-300" />
           </a>
 
-          <div className="flex gap-3 sm:gap-5 md:gap-8 items-center font-nav text-[9px] sm:text-[11px] md:text-sm tracking-[0.15em] md:tracking-wide uppercase">
+          <div className="hidden md:flex gap-8 items-center font-nav text-sm tracking-wide uppercase">
             <a className={`transition-colors duration-300 hover:opacity-70`} href="#shop">Shop</a>
             <a className={`transition-colors duration-300 hover:opacity-70`} href="#philosophy">Philosophy</a>
             <a className={`transition-colors duration-300 hover:opacity-70`} href="#community">Community</a>
@@ -75,14 +77,40 @@ export default function App() {
                 </div>
               )}
             </div>
+
+            {/* Hamburger Menu (Mobile Only) */}
+            <button
+              className="md:hidden flex items-center transition-opacity hover:opacity-70"
+              onClick={() => setIsMobileMenuOpen(true)}
+            >
+              <span className="material-symbols-outlined text-[24px]">menu</span>
+            </button>
           </div>
         </div>
       </nav>
 
+      {/* Mobile Slide-out Menu */}
+      <div className={`fixed inset-0 z-[60] flex md:hidden transition-opacity duration-300 ${isMobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+        <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" onClick={() => setIsMobileMenuOpen(false)}></div>
+        <div className={`absolute top-0 right-0 h-full w-[250px] bg-background-light shadow-2xl transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'} flex flex-col py-8 px-6`}>
+          <div className="flex justify-end mb-12">
+            <button className="text-stone-900 transition-opacity hover:opacity-70" onClick={() => setIsMobileMenuOpen(false)}>
+              <span className="material-symbols-outlined text-[28px]">close</span>
+            </button>
+          </div>
+          <div className="flex flex-col gap-8 text-stone-900 font-nav text-sm tracking-[0.15em] uppercase items-end">
+            <a onClick={() => setIsMobileMenuOpen(false)} className="hover:opacity-70 transition-opacity" href="#shop">Shop</a>
+            <a onClick={() => setIsMobileMenuOpen(false)} className="hover:opacity-70 transition-opacity" href="#philosophy">Philosophy</a>
+            <a onClick={() => setIsMobileMenuOpen(false)} className="hover:opacity-70 transition-opacity" href="#community">Community</a>
+            <a onClick={() => setIsMobileMenuOpen(false)} className="hover:opacity-70 transition-opacity" href="#subscribe">Subscribe</a>
+          </div>
+        </div>
+      </div>
+
       <main className="flex flex-col w-full flex-grow">
 
         {/* 2. Hero Section */}
-        <HeroReveal heroImage={heroBackgroundImage}>
+        <HeroReveal heroImage={heroBackgroundImage} mobileHeroImage={mobileHeroBackgroundImage}>
           <h1 className="text-white font-heading font-light text-[40px] md:text-[64px] leading-tight tracking-tight mb-8 drop-shadow-sm">
             Movement, refined.
           </h1>

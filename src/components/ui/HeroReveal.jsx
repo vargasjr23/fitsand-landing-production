@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, useMotionTemplate } from "framer-motion";
 
-export const HeroReveal = ({ heroImage, children }) => {
+export const HeroReveal = ({ heroImage, mobileHeroImage, children }) => {
   const containerRef = useRef(null);
 
   // We track the scroll progress specifically through this 200vh container.
@@ -47,14 +47,17 @@ export const HeroReveal = ({ heroImage, children }) => {
             }}
         >
           <motion.div
-              className={`absolute inset-0 bg-[75%_center] md:bg-center bg-cover bg-no-repeat`}
+              className={`absolute inset-0`}
               style={{
-                  backgroundImage: `url('${heroImage}')`,
                   scale: backgroundScale,
                   willChange: "transform"
               }}
           >
-              <div className="absolute inset-0 bg-black/30"></div>
+              <picture className="absolute inset-0 w-full h-full">
+                  {mobileHeroImage && <source media="(max-width: 768px)" srcSet={mobileHeroImage} />}
+                  <img src={heroImage} alt="Hero Background" className="w-full h-full object-cover object-[75%_center] md:object-center" />
+              </picture>
+              <div className="absolute inset-0 bg-black/30 z-10"></div>
           </motion.div>
         </motion.div>
 
