@@ -12,9 +12,9 @@ export default function App() {
   // Handle Navbar Scroll Effect
   useEffect(() => {
     const handleScroll = () => {
-      // The HeroReveal container is 400vh. The sticky animation finishes exactly after 300vh of scrolling.
-      // So the navbar turns white only after we completely leave the dark hero section.
-      setIsScrolled(window.scrollY > window.innerHeight * 3);
+      // The HeroReveal container is 200vh. The sticky animation finishes after 100vh of scrolling.
+      // The navbar turns white right after the sticky section completes and moves up.
+      setIsScrolled(window.scrollY > window.innerHeight * 1);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -27,6 +27,10 @@ export default function App() {
   const heroBackgroundImage = "/hero.jpg";
   const mobileHeroBackgroundImage = "/hero-mobile.jpg";
   const brandStoryBackgroundImage = "/brandhistory.jpg";
+  const product1Image = "/product-1.jpg";
+  const product2Image = "/product-2.jpg";
+  const product3Image = "/product-3.jpg";
+  const product4Image = "/product-4.jpg";
 
   return (
     <div className="font-body text-text-main bg-background-light antialiased selection:bg-primary selection:text-white flex flex-col min-h-screen">
@@ -141,7 +145,7 @@ export default function App() {
             <ScrollReveal delay={0.1} className="shrink-0 snap-center w-[85vw] sm:w-[300px] md:w-auto">
               <div className="group/card flex flex-col w-full h-full font-display cursor-pointer">
                 <div className="relative bg-brand-surface rounded-lg aspect-[2/3] overflow-hidden mb-4 isolate">
-                  <img alt="Seamless Flow Leggings" className="w-full h-full object-cover product-image group-hover/card:scale-103 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrazpj6Ne2PBm5ZwYiBgEZiXV6qnCCf3vcEyBfB9-Sf2-tQUeBkO67Nf1Rm0SkJn6BWKcUYouQyLGHfT9g2hWUsAozPaySPaeWlSnQ-qLvIhcAohUTXpPCDD8eQClLw7Qwv5-4DElNTfWc72z-rj6dogAwCNNZ9yUbJhyQWhodM39EKNYWkuuT0CEo_aUG0NdntK923NDVK-wBXEZWbEM8GP_VXp_8Gb_iGxsMHlAVbmPVNoDsseqChQX5JBt0jl2-8aWo3J8AAko" />
+                  <img alt="Seamless Flow Leggings" className="w-full h-full object-cover product-image group-hover/card:scale-103 transition-transform duration-700" src={product1Image} />
                   <div className="absolute inset-0 bg-black/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 z-10 pointer-events-none"></div>
                   <div className="absolute bottom-6 left-0 right-0 flex justify-center z-20 px-4">
                     <a href={`https://wa.me/${whatsappNumber}?text=I'm%20interested%20in%20the%20Seamless%20Flow%20Leggings`} target="_blank" rel="noreferrer" className="w-full max-w-[200px] flex justify-center items-center bg-background-light text-brand-text font-semibold text-[11px] tracking-wide uppercase py-3 rounded-md shadow-sm opacity-0 translate-y-4 group-hover/card:opacity-100 group-hover/card:translate-y-0 transition-all duration-300 ease-out hover:bg-[#25D366] hover:text-white focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#25D366] focus-visible:outline-none focus:opacity-100 focus:translate-y-0">
@@ -160,7 +164,7 @@ export default function App() {
             <ScrollReveal delay={0.2} className="shrink-0 snap-center w-[85vw] sm:w-[300px] md:w-auto">
               <div className="group/card flex flex-col w-full h-full font-display cursor-pointer">
                 <div className="relative bg-brand-surface rounded-lg aspect-[2/3] overflow-hidden mb-4 isolate">
-                  <img alt="Elevated Crop Top" className="w-full h-full object-cover product-image group-hover/card:scale-103 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-rH3bGa2IYEHl0OXY1RtVLTUBw0_Tes3GUC0JnxxyOuNn_4El1kBhP24oUxOaskKagp-5iICmnAx6o8v7dPrrL0zaNZqucBI6ldHM-MbxgDDejn93W6VjQQWu-CrD_9xbfGLKMeoubtBs29LBwoJw4vWsmuJ_N-fwOUUeECV_b2TNmRNSgN502rTPZpLbNktLQEH-XH4m3lJYvGwVKavMv4fTb67YaltFqfwBu1h3ffUjWsulgoJ45NqVmmExIZ9WIREn5F1k280" />
+                  <img alt="Elevated Crop Top" className="w-full h-full object-cover product-image group-hover/card:scale-103 transition-transform duration-700" src={product2Image} />
                   <div className="absolute inset-0 bg-black/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 z-10 pointer-events-none"></div>
                   <div className="absolute bottom-6 left-0 right-0 flex justify-center z-20 px-4">
                     <a href={`https://wa.me/${whatsappNumber}?text=I'm%20interested%20in%20the%20Elevated%20Crop%20Top`} target="_blank" rel="noreferrer" className="w-full max-w-[200px] flex justify-center items-center bg-background-light text-brand-text font-semibold text-[11px] tracking-wide uppercase py-3 rounded-md shadow-sm opacity-0 translate-y-4 group-hover/card:opacity-100 group-hover/card:translate-y-0 transition-all duration-300 ease-out hover:bg-[#25D366] hover:text-white focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#25D366] focus-visible:outline-none focus:opacity-100 focus:translate-y-0">
@@ -179,7 +183,7 @@ export default function App() {
             <ScrollReveal delay={0.3} className="shrink-0 snap-center w-[85vw] sm:w-[300px] md:w-auto">
               <div className="group/card flex flex-col w-full h-full font-display cursor-pointer">
                 <div className="relative bg-brand-surface rounded-lg aspect-[2/3] overflow-hidden mb-4 isolate">
-                  <img alt="Ribbed Bralette" className="w-full h-full object-cover product-image group-hover/card:scale-103 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxlMRJkXyZzkhaiKD2YoEpKJ6YGz5uLpdMzzPbQozLKO9KDw-5gY3blZV1_ZgKbppWe0GCEEwP-UHP76EWA7fZyVV-OEovdgH8gcF7lUm_0qijHtpftqw3P1WwTDYzIJ8oOqGk9JIffGSsQ5RZGWVrvG8amC-CV9D_p8bX4rQqBxGIWIFJaBR0no73fR1pplbbBXVTS01fSbodkPwCitQVXFsQDbxnD-GTfPeVDESVspv1JKCc06qdDIEqgjt4pt84Sw_TdDMwe-g" />
+                  <img alt="Ribbed Bralette" className="w-full h-full object-cover product-image group-hover/card:scale-103 transition-transform duration-700" src={product3Image} />
                   <div className="absolute inset-0 bg-black/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 z-10 pointer-events-none"></div>
                   <div className="absolute bottom-6 left-0 right-0 flex justify-center z-20 px-4">
                     <a href={`https://wa.me/${whatsappNumber}?text=I'm%20interested%20in%20the%20Ribbed%20Bralette`} target="_blank" rel="noreferrer" className="w-full max-w-[200px] flex justify-center items-center bg-background-light text-brand-text font-semibold text-[11px] tracking-wide uppercase py-3 rounded-md shadow-sm opacity-0 translate-y-4 group-hover/card:opacity-100 group-hover/card:translate-y-0 transition-all duration-300 ease-out hover:bg-[#25D366] hover:text-white focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#25D366] focus-visible:outline-none focus:opacity-100 focus:translate-y-0">
@@ -198,7 +202,7 @@ export default function App() {
             <ScrollReveal delay={0.4} className="shrink-0 snap-center pr-4 md:pr-0 w-[85vw] sm:w-[300px] md:w-auto">
               <div className="group/card flex flex-col w-full h-full font-display cursor-pointer">
                 <div className="relative bg-brand-surface rounded-lg aspect-[2/3] overflow-hidden mb-4 isolate">
-                  <img alt="Lounge Joggers" className="w-full h-full object-cover product-image group-hover/card:scale-103 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJXG-Qus5MwYiH3wU-7XCOVMRkKKFRSkYWmLQI7La--GjW32oWVVQOr5ZeJPiFsmbFn6NIK2liSyyFEpqHOUHsvbug1lRT6GlvFqxXFGsLElotAuCaRomb_VUOeYNkDUFmAqL23Ed7TG6r4QV8IhpXcw7Wk6hrVHlnxiB0cra8GdpQf4gmZPo_pFmXyz4juA6b7vYfjS3dkkNN98snvm_t-h5p9O-qVl88ENLXrDFOGoISP0bO-IedMVWlRZYtuU9TrR90ctzK2pE" />
+                  <img alt="Lounge Joggers" className="w-full h-full object-cover product-image group-hover/card:scale-103 transition-transform duration-700" src={product4Image} />
                   <div className="absolute inset-0 bg-black/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 z-10 pointer-events-none"></div>
                   <div className="absolute bottom-6 left-0 right-0 flex justify-center z-20 px-4">
                     <a href={`https://wa.me/${whatsappNumber}?text=I'm%20interested%20in%20the%20Lounge%20Joggers`} target="_blank" rel="noreferrer" className="w-full max-w-[200px] flex justify-center items-center bg-background-light text-brand-text font-semibold text-[11px] tracking-wide uppercase py-3 rounded-md shadow-sm opacity-0 translate-y-4 group-hover/card:opacity-100 group-hover/card:translate-y-0 transition-all duration-300 ease-out hover:bg-[#25D366] hover:text-white focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#25D366] focus-visible:outline-none focus:opacity-100 focus:translate-y-0">
