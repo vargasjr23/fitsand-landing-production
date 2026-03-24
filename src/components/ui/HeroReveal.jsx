@@ -91,7 +91,7 @@ export const HeroReveal = ({ heroImage, mobileHeroImage, children }) => {
 
         {/* Minimal Scroll Down Indicator at the very bottom, visible only at the start */}
         <motion.div 
-          className="absolute bottom-12 left-0 right-0 flex flex-col items-center gap-1 z-40 pointer-events-none"
+          className="absolute bottom-32 left-0 right-0 flex flex-col items-center gap-1 z-40 pointer-events-none"
           style={{ 
             opacity: scrollIndicatorOpacity, 
             y: scrollIndicatorY
