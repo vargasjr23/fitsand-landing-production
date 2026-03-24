@@ -29,6 +29,10 @@ export const HeroReveal = ({ heroImage, mobileHeroImage, children }) => {
   // Physically unmount the logo from the flex layout after standard fade to prevent absolutely any ghost overlapping
   const logoDisplay = useTransform(scrollYProgress, (pos) => pos > 0.31 ? "none" : "flex");
 
+  // Scroll indicator fades out very fast as soon as user starts scrolling
+  const scrollIndicatorOpacity = useTransform(scrollYProgress, [0, 0.05], [1, 0]);
+  const scrollIndicatorY = useTransform(scrollYProgress, [0, 0.05], [0, 10]);
+
   const [textVisible, setTextVisible] = useState(false);
   
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
@@ -83,6 +87,24 @@ export const HeroReveal = ({ heroImage, mobileHeroImage, children }) => {
             transition={{ duration: 0.8, ease: "easeOut" }}
         >
           {children}
+        </motion.div>
+
+        {/* Minimal Scroll Down Indicator at the very bottom, visible only at the start */}
+        <motion.div 
+          className="absolute bottom-10 left-0 right-0 flex flex-col items-center gap-1 z-40 pointer-events-none"
+          style={{ 
+            opacity: scrollIndicatorOpacity, 
+            y: scrollIndicatorY
+          }}
+        >
+          <span className="font-nav text-[10px] tracking-[0.3em] uppercase text-stone-400">Scroll</span>
+          <motion.span 
+            className="material-symbols-outlined text-stone-400 text-[20px]"
+            animate={{ y: [0, 5, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          >
+            expand_more
+          </motion.span>
         </motion.div>
 
       </div>
